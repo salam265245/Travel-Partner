@@ -807,18 +807,14 @@ render();
   <script>
   function handleSaveClick(){
     const btn = document.getElementById('saveBtnEl');
-    const doneBtn = document.getElementById('doneBtn');
-    // Turn both green on click
+    // Only Save button green - independent
     if(btn){ btn.style.background='#16a34a'; btn.style.color='white'; btn.innerHTML='✅ Saved'; }
-    if(doneBtn){ doneBtn.style.background='#16a34a'; doneBtn.style.color='white'; }
-    // Call original save
+    // Call only save, not complete
     if(typeof saveToFirebase==='function'){ saveToFirebase(); }
-    // Reset back to black after 2.5s, or keep green? As per request keep green after click
   }
   function handleDoneClick(){
-    const btn = document.getElementById('saveBtnEl');
     const doneBtn = document.getElementById('doneBtn');
-    if(btn){ btn.style.background='#16a34a'; btn.style.color='white'; }
+    // Only Done button green - independent
     if(doneBtn){ doneBtn.style.background='#16a34a'; doneBtn.style.color='white'; doneBtn.innerHTML='✅ Done'; }
     if(typeof completeTour==='function'){ completeTour(); }
   }
